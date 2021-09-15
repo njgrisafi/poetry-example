@@ -1,0 +1,31 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "app"
+version = "0.1.0"
+description = "Example for poetry"
+authors = []
+packages = [
+    {include = "app"},
+]
+
+[tool.poetry.dependencies]
+python = "3.6.10"
+requests = {version = "*", optional = true}
+
+[tool.poetry.dev-dependencies]
+black = {version = "21.5b1", optional = true}
+flake8 = {version = "3.9.0", optional = true}
+isort = {version = "5.8.0", optional = true}
+
+[tool.poetry.extras]
+lint = [
+    "black",
+    "flake8",
+    "isort",
+]
+non_dev = [
+    "requests"
+]
